@@ -1,7 +1,7 @@
 # jenkins-debian
 Download Jenkins on Localhost based on Debian 12
 
-### Long Term Support release
+## Long Term Support release
 ```
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -12,7 +12,7 @@ sudo apt-get update
 sudo apt-get install jenkins
 ```
 
-### Installation of Java
+## Installation of Java
 ```
 sudo apt update
 sudo apt install fontconfig openjdk-17-jre
@@ -21,3 +21,20 @@ openjdk version "17.0.8" 2023-07-18
 OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
 OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
 ```
+### You can enable the Jenkins service to start at boot with the command:
+```
+sudo systemctl enable jenkins
+```
+### You can start the Jenkins service with the command:
+```
+sudo systemctl start jenkins
+```
+### You can check the status of the Jenkins service using the command:
+```
+sudo systemctl status jenkins
+```
+If everything has been set up correctly, you should see an output like this:
+``` 
+Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
+Active: active (running) since Tue 2018-11-13 16:19:01 +03; 4min 57s ago
+``` 
